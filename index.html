@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boozesite</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+
+</head>
+<style>
+    body.debug .container,
+    body.debug .container-fluid {
+        outline: 2px double blue;
+        outline-offset: -2px;
+    }
+
+    body.debug .row {
+        outline: 2px dashed red;
+        outline-offset: -2px;
+    }
+
+    body.debug [class*="col-"] {
+        outline: 2px dotted forestgreen;
+        outline-offset: -3px;
+    }
+</style>
+
+
+<body class="container d-flex-wrap bg-success">
+ <span class="border border-warning"> </span>
+    <header class=" bg-info container-fluid ">
+<section class="row align-items-center ">
+    <div class="col-6">  
+        <img class="rounded-pill"src="data:image/png;base64,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" alt="">  
+    
+</div>
+
+<div class="col-6 d-flex justify-content-end">
+    <button class="btn btn-warning btn-outline-light p-2 mx-1 text-danger"> about us</button>
+    <button class="btn btn-warning btn-outline-light p-2 mx-1 text-danger">services</button>
+    <button class="btn btn-warning btn-outline-light p-2 mx-1 text-danger">drinks</button>
+    
+</div>
+    </section>
+    </header>
+
+<main class="container-fluid">
+
+    <section class="row justify-content-center">
+
+<div class="col-12">
+    <h1 class="text-center  text-dark text-small"><em> <span class="border border-warning rounded-pill"> Liquor </span></em></h1>
+    
+</div>
+<div class="col-12">
+    <img class="img-fluid rounded mx-auto d-block" 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7BNQJ4vTVfAc7NoDgvrzFCv3HNOx1ZlunrA&usqp=CAU" alt="">
+</div>
+
+    </section>
+
+    <section class="row">
+
+<div class="col-12">
+    <h1 class="text-center">hello</h1>
+</div>
+<div class="d-flex">
+<div class=" text-dark">
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+        Ipsa facere deleniti sapiente, reprehenderit expedita neque, 
+        libero dolore dolorem dolores voluptatum perspiciatis. Laboriosam perspiciatis laudantium sapiente?
+    </p>
+</div>
+
+<div class=" text-dark">
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, 
+        vel, culpa asperiores beatae provident non distinctio fugit deserunt, 
+        omnis optio quam nostrum officia cupiditate sequi.
+    </p>
+
+    <button class="btn btn-outline-dark">learn more</button>
+</div>
+</div>
+    </section>
+<div>
+    <section class="row-6">
+        <div class="col-12 d-flex justify-content-center">
+<img class="p-2 rounded-circle"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5SRboOMfgG8ZUTBd60TaeDySmNOOQRCk4Cw&usqp=CAU" alt="">
+<img class="p-2 rounded-circle"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjnEdjZejGrRtM8157XJDLuzV9iHHSJp7kJw&usqp=CAU" alt="">
+<img class="p-2 rounded-circle"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8b_2BEV0SWdV_qgQpcmVvcH0Pmg1h5bH7pQ&usqp=CAU" alt="">        
+</div>
+</div>
+
+
+
+    </section>
+
+</main>
+<footer class="container-fluid bg-info">
+    <section>
+<div class="d-flex p-2 justify-content-end">
+    <button class="btn btn-outline-dark p-2 mx-1">whiskey</button>
+    <button class="btn btn-outline-dark p-2 mx-1">vodka</button>
+    <button class="btn btn-outline-dark p-2 mx-1">gin</button>
+    <button class="btn btn-outline-dark p-2 mx-1">beer</button>
+</div>
+<div class="d-flex">
+    <p>
+       <em> drinking is bad mkay</em>
+    </p>
+</div>
+</section>
+
+</footer>
+    
+</body>
+</html>
